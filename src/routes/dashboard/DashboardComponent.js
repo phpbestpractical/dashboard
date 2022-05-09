@@ -8,6 +8,7 @@ import TasksComponent from './TasksComponent';
 import Company from 'components/custom/Company';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import { Children } from 'react/cjs/react.production.min';
 
 const useStyles = createUseStyles({
     cardsContainer: {
@@ -116,14 +117,21 @@ const useStyles = createUseStyles({
         flex: '33.33%'
       },
       table :{
-        border: '2px solid forestgreen',
+        border: '2px solid #a0a096',
         width: '90%',
-        height: '78%'
+        height: '78%',
+        background:'white'
       },
         
       th :{
-        borderBottom: '1px solid black'
+        borderBottom: '1px solid black',
+        textAlign:'center'
       },
+    //   tr:{
+    //     nth-Children(even) : {
+    //         backgroundColor: Lightgreen;
+    //     }
+    //   },
         
       td :{
         textAlign: 'center'
@@ -189,32 +197,76 @@ function DashboardComponent() {
    <div className={classes.column}>
    <div className={classes.addWidth}>
        <img style={{marginTop:'12px'}} height='25px' width='27px' src={require('./../../assets/icons/iconstat.png')} />
-            <span style={{marginTop:'12px'}}>Shortcuts</span>
+            <span style={{marginTop:'12px'}}>Recent Reviews</span>
        </div>
        <table className={classes.table}>
   <tr>
-    <th className={classes.th}>Company</th>
-    <th className={classes.th}>Contact</th>
-    <th className={classes.th}>Country</th>
+    <th className={classes.th}>Type</th>
+    <th className={classes.th}>Description</th>
+    <th className={classes.th}>Review Date</th>
+    <th className={classes.th}>Status</th>
   </tr>
   <tr>
-    <td className={classes.td}>Alfreds Futterkiste</td>
-    <td className={classes.td}>Maria Anders</td>
-    <td className={classes.td}>Germany</td>
+    <td className={classes.td}>Annuanl</td>
+    <td className={classes.td}>2020 Annual Review</td>
+    <td className={classes.td}>30/11/2022</td>
+    <td className={classes.td}>Planned</td>
   </tr>
   <tr>
-  <td className={classes.td}>Alfreds Futterkiste</td>
-    <td className={classes.td}>Maria Anders</td>
-    <td className={classes.td}>Germany</td>
+  <td className={classes.td}>Annuanl</td>
+    <td className={classes.td}>2020 Annual Review</td>
+    <td className={classes.td}>30/11/2022</td>
+    <td className={classes.td}>Planned</td>
+  </tr>
+  <tr>
+  <td className={classes.td}>Annuanl</td>
+    <td className={classes.td}>2020 Annual Review</td>
+    <td className={classes.td}>30/11/2022</td>
+    <td className={classes.td}>Planned</td>
   </tr>
 </table>
   </div>
+
+
   <div className={classes.column}>
-  <div className={classes.addWidth}>
+   <div className={classes.addWidth}>
+       <img style={{marginTop:'12px'}} height='25px' width='27px' src={require('./../../assets/icons/iconstat.png')} />
+            <span style={{marginTop:'12px'}}>Recent Training</span>
+       </div>
+       <table className={classes.table}>
+  <tr>
+    <th className={classes.th}>Type</th>
+    <th className={classes.th}>Description</th>
+    <th className={classes.th}>Review Date</th>
+    <th className={classes.th}>Status</th>
+  </tr>
+  <tr>
+    <td className={classes.td}>Annuanl</td>
+    <td className={classes.td}>2020 Annual Review</td>
+    <td className={classes.td}>30/11/2022</td>
+    <td className={classes.td}>Planned</td>
+  </tr>
+  <tr>
+  <td className={classes.td}>Annuanl</td>
+    <td className={classes.td}>2020 Annual Review</td>
+    <td className={classes.td}>30/11/2022</td>
+    <td className={classes.td}>Planned</td>
+  </tr>
+  <tr>
+  <td className={classes.td}>Annuanl</td>
+    <td className={classes.td}>2020 Annual Review</td>
+    <td className={classes.td}>30/11/2022</td>
+    <td className={classes.td}>Planned</td>
+  </tr>
+</table>
+  </div>
+
+  <div className={classes.column}>
+  {/* <div className={classes.addWidth}>
        <img style={{marginTop:'12px'}} height='25px' width='27px' src={require('./../../assets/icons/iconstat.png')} />
             <span style={{marginTop:'12px'}}>Shortcuts</span>
        </div>
-     <Calendar onChange={onChange} value={value} className={classes.calnder}/>
+     <Calendar onChange={onChange} value={value} className={classes.calnder}/> */}
   </div>
 </div>
 
