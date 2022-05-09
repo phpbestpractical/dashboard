@@ -140,37 +140,37 @@ function DashboardComponent() {
         <Column>
         <Row style={{height:'5px'}}>
         <img height='30px' src={require('./../../assets/icons/dashboardname.png')}/>
-        <span className={classes.title}>Ariel Air Collins </span> 
+        {/* <span className={classes.title}>Ariel Air Collins </span>  */}
         </Row>
         <Row  horizontal='left' vertical='center' 
         className={classes.lastRow}
         breakpoints={{ 1024: 'column' }}>
             {/* <IconLogo /> */}
             <img height='50px' src={require('./../../assets/icons/icons8-circled-user-female-skin-type-1-and-2-16.png')} />
-                <div className={classes.dashboardPicDiv1}>Gracie Collins </div> 
-                <div className={classes.dashbardPicdiv2}>Senior Spocs </div> 
+                {/* <div className={classes.dashboardPicDiv1}>Gracie Collins </div>  */}
+                <div className={classes.dashbardPicdiv2}>Senior</div> 
                 <Row>
-            <div className={classes.dashboardFirstType}>Code <b>COLLG</b></div>
-            <div className={classes.dashboardSecondType}>Born <b>16 Aug 1982</b> </div>
-            <div className={classes.dashbardThirdType}>Gender <b>Female</b></div>
+            <div className={classes.dashboardFirstType}>Code <b>TL</b></div>
+            {/* <div className={classes.dashboardSecondType}>Birthday <b>8 June</b> </div>
+            <div className={classes.dashbardThirdType}>Gender <b>Female</b></div> */}
         </Row>
         <Row>
-        <div className={classes.dashboardFirstType}>Code <b>COLLG</b></div>
-            <div className={classes.dashboardSecondType}>Born <b>16 Aug 1982</b> </div>
-            <div className={classes.dashbardThirdType}>Gender <b>Female</b></div>
+        <div className={classes.dashboardFirstType}>Designation <b>Tech Lead</b></div>
+            {/* <div className={classes.dashboardSecondType}>Born <b>16 Aug 1982</b> </div>
+            <div className={classes.dashbardThirdType}>Gender <b>Female</b></div> */}
         </Row>
         <Row>
-        <div className={classes.dashboardFirstType}>Code <b>COLLG</b></div>
-            <div className={classes.dashboardSecondType}>Born <b>16 Aug 1982</b> </div>
-            <div className={classes.dashbardThirdType}>Gender <b>Female</b></div>
+        <div className={classes.dashboardFirstType}>Practise <b>Development</b></div>
+            {/* <div className={classes.dashboardSecondType}>Born <b>16 Aug 1982</b> </div>
+            <div className={classes.dashbardThirdType}>Gender <b>Female</b></div> */}
         </Row>
         </Row>
         
         </Column>
         <Column>
         <Row className={classes.rowBox}>
-        <img style={{marginTop:'12px'}} height='25px' width='27px' src={require('./../../assets/icons/iconstat.png')} />
-            <span style={{marginTop:'12px'}}>Shortcuts</span>
+        {/* <img style={{marginTop:'12px'}} height='25px' width='27px' src={require('./../../assets/icons/iconstat.png')} />
+            <span style={{marginTop:'12px'}}></span>mmm */}
         </Row>
         <Row>
         <Company />
@@ -182,25 +182,25 @@ function DashboardComponent() {
    <div className={classes.column}>
        <div className={classes.addWidth}>
        <img style={{marginTop:'12px'}} height='25px' width='27px' src={require('./../../assets/icons/iconstat.png')} />
-            <span style={{marginTop:'12px'}}>Shortcuts</span>
+            <span style={{marginTop:'12px'}}>Calender</span>
        </div>
     <Calendar onChange={onChange} value={value} className={classes.calnder}/>
    </div>
    <div className={classes.column}>
    <div className={classes.addWidth}>
        <img style={{marginTop:'12px'}} height='25px' width='27px' src={require('./../../assets/icons/iconstat.png')} />
-            <span style={{marginTop:'12px'}}>Shortcuts</span>
+            <span style={{marginTop:'12px'}}>Announcements</span>
        </div>
        <table className={classes.table}>
+   <tr>
+    <th className={classes.th}>*</th>
+    <th className={classes.th}>***</th>
+    <th className={classes.th}>*</th>
+  </tr> 
   <tr>
-    <th className={classes.th}>Company</th>
-    <th className={classes.th}>Contact</th>
-    <th className={classes.th}>Country</th>
-  </tr>
-  <tr>
-    <td className={classes.td}>Alfreds Futterkiste</td>
-    <td className={classes.td}>Maria Anders</td>
-    <td className={classes.td}>Germany</td>
+    <td className={classes.td}>Product Releases</td>
+    <td className={classes.td}>Star Of The Month</td>
+    <td className={classes.td}>Client Vists This Week</td>
   </tr>
   <tr>
   <td className={classes.td}>Alfreds Futterkiste</td>
@@ -214,7 +214,7 @@ function DashboardComponent() {
        <img style={{marginTop:'12px'}} height='25px' width='27px' src={require('./../../assets/icons/iconstat.png')} />
             <span style={{marginTop:'12px'}}>Shortcuts</span>
        </div>
-     <Calendar onChange={onChange} value={value} className={classes.calnder}/>
+     {/* <Calendar onChange={onChange} value={value} className={classes.calnder}/> */}
   </div>
 </div>
 
