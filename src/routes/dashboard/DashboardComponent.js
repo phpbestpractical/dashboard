@@ -324,119 +324,44 @@ function DashboardComponent() {
 
             <Modal open={openFirst} onClose={() => setOpenFirst(false)} center>
                 <p>Birthay Details</p>
-                <table className={classes.table}>
-                    <thead>
-                        <tr>
-                            <th className={classes.th}>*</th>
-                            <th className={classes.th}>***</th>
-                            <th className={classes.th}>*</th>
-                        </tr>
-                    </thead>
-                    <tbody style={{ overflowY: 'scroll', height: '100px' }}>
-                        <tr>
-                            <td className={classes.td}>Product Releases</td>
-                            <td className={classes.td}>Star Of The Month</td>
-                            <td className={classes.td}><button className="button" onClick={() => setOpenSecond(true)}>
-                                click
-                            </button></td>
-                        </tr>
-                        <tr>
-                            <td className={classes.td}>Product Releases</td>
-                            <td className={classes.td}>Star Of The Month</td>
-                            <td className={classes.td}><button className="button" onClick={() => setOpenSecond(true)}>
-                                click
-                            </button></td>
-                        </tr>
-                        <tr>
-                            <td className={classes.td}>Product Releases</td>
-                            <td className={classes.td}>Star Of The Month</td>
-                            <td className={classes.td}><button className="button" onClick={() => setOpenSecond(true)}>
-                                click
-                            </button></td>
-                        </tr>
-                        <tr>
-                            <td className={classes.td}>Product Releases</td>
-                            <td className={classes.td}>Star Of The Month</td>
-                            <td className={classes.td}><button className="button" onClick={() => setOpenSecond(true)}>
-                                click
-                            </button></td>
-                        </tr>
-                        <tr>
-                            <td className={classes.td}>Product Releases</td>
-                            <td className={classes.td}>Star Of The Month</td>
-                            <td className={classes.td}><button className="button" onClick={() => setOpenSecond(true)}>
-                                click
-                            </button></td>
-                        </tr>
-                        <tr>
-                            <td className={classes.td}>Product Releases</td>
-                            <td className={classes.td}>Star Of The Month</td>
-                            <td className={classes.td}><button className="button" onClick={() => setOpenSecond(true)}>
-                                click
-                            </button></td>
-                        </tr>
-                        <tr>
-                            <td className={classes.td}>Product Releases</td>
-                            <td className={classes.td}>Star Of The Month</td>
-                            <td className={classes.td}><button className="button" onClick={() => setOpenSecond(true)}>
-                                click
-                            </button></td>
-                        </tr>
-                        <tr>
-                            <td className={classes.td}>Product Releases</td>
-                            <td className={classes.td}>Star Of The Month</td>
-                            <td className={classes.td}><button className="button" onClick={() => setOpenSecond(true)}>
-                                click
-                            </button></td>
-                        </tr>
-                        <tr>
-                            <td className={classes.td}>Product Releases</td>
-                            <td className={classes.td}>Star Of The Month</td>
-                            <td className={classes.td}><button className="button" onClick={() => setOpenSecond(true)}>
-                                click
-                            </button></td>
-                        </tr>
-                        <tr>
-                            <td className={classes.td}>Product Releases</td>
-                            <td className={classes.td}>Star Of The Month</td>
-                            <td className={classes.td}><button className="button" onClick={() => setOpenSecond(true)}>
-                                click
-                            </button></td>
-                        </tr>
-                        <tr>
-                            <td className={classes.td}>Product Releases</td>
-                            <td className={classes.td}>Star Of The Month</td>
-                            <td className={classes.td}><button className="button" onClick={() => setOpenSecond(true)}>
-                                click
-                            </button></td>
-                        </tr>
-                        <tr>
-                            <td className={classes.td}>Product Releases</td>
-                            <td className={classes.td}>Star Of The Month</td>
-                            <td className={classes.td}><button className="button" onClick={() => setOpenSecond(true)}>
-                                click
-                            </button></td>
-                        </tr>
-                        <tr>
-                            <td className={classes.td}>Product Releases</td>
-                            <td className={classes.td}>Star Of The Month</td>
-                            <td className={classes.td}><button className="button" onClick={() => setOpenSecond(true)}>
-                                click
-                            </button></td>
-                        </tr>
-                    </tbody>
-                    {/* <tfoot>
-                        <tr>
-
-                            <td className={classes.td}>Annuanl</td>
-                            <td className={classes.td}>2020 Annual Review</td>
-                            <td className={classes.td}>
-                                <button className="button" onClick={() => setOpenSecond(true)}>
-                                    click
-                                </button></td>
-                        </tr>
-                    </tfoot> */}
-                </table>
+                <div style={{ overflowX: 'scroll', height: '46px' }}>
+                    <p>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
+                        
+                    </p></div>
 
             </Modal>
             <Modal open={openSecond} onClose={() => setOpenSecond(false)} center>
