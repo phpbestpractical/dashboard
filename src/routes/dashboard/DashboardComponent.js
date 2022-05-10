@@ -143,6 +143,12 @@ const useStyles = createUseStyles({
         width: '33%',
         height: '100px',
         cursor: 'pointer'
+    },
+    birthName : {
+        borderRadius: '23px',
+        background: '#51d8f7',
+        padding: '20px',
+        marginRight: '20px'
     }
 });
 
@@ -326,41 +332,22 @@ function DashboardComponent() {
                 <p>Birthay Details</p>
                 <div style={{ overflowX: 'scroll', height: '46px' }}>
                     <p>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className="bla">james</span>
-                        
+                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
+                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
                     </p></div>
 
             </Modal>
