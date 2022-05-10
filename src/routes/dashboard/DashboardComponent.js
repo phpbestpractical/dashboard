@@ -11,6 +11,24 @@ import 'react-calendar/dist/Calendar.css';
 import { Children } from 'react/cjs/react.production.min';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
+import { Slide } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css';
+
+
+const slideImages = [
+    {
+        url: require('./../../assets/icons/dashboardname.png'),
+        caption: 'Slide 1'
+    },
+    {
+        url: require('./../../assets/icons/dashboardname.png'),
+        caption: 'Slide 2'
+    },
+    {
+        url: require('./../../assets/icons/dashboardname.png'),
+        caption: 'Slide 3'
+    },
+];
 
 const useStyles = createUseStyles({
     cardsContainer: {
@@ -87,14 +105,15 @@ const useStyles = createUseStyles({
     },
     rowBox: {
         display: 'grid',
-        gridTemplateColumns: '1fr 1fr 1fr 1fr',
+        gridTemplateColumns: '1fr 1fr 1fr',
         gridGap: '20px',
         background: '#def6ff',
         padding: '0 10px',
         border: '1px solid #DFE0EB',
         marginTop: '33px',
         width: '100%',
-        height: '56px'
+        height: '130px',
+        marginBottom: '32px'
     },
     addWidth: {
         width: '90% !important',
@@ -144,7 +163,7 @@ const useStyles = createUseStyles({
         height: '100px',
         cursor: 'pointer'
     },
-    birthName : {
+    birthName: {
         borderRadius: '23px',
         background: '#51d8f7',
         padding: '20px',
@@ -201,7 +220,7 @@ function DashboardComponent() {
 
             </Column>
             <Column>
-                <Row className={classes.rowBox}>
+                {/* <Row className={classes.rowBox}>
                     <div className={classes.link}>
                         abc
                     </div>
@@ -213,8 +232,45 @@ function DashboardComponent() {
                     </div>
 
                     {/* <img style={{marginTop:'12px'}} height='25px' width='27px' src={require('./../../assets/icons/iconstat.png')} />
-            <span style={{marginTop:'12px'}}></span>mmm */}
-                </Row>
+            <span style={{marginTop:'12px'}}></span>
+                </Row> */}
+
+                <div className={classes.rowBox}>
+                    <Column>
+                        <span className='rowColor'>Shortcuts</span>
+                        <Row horizontal='left' vertical='center'
+                            breakpoints={{ 1024: 'column' }}
+                            className="row">
+
+                        </Row>
+                    </Column>
+                    <Column>
+                        <span className='rowColor' >Shortcuts</span>
+                        <Row horizontal='left' vertical='center'
+                            breakpoints={{ 1024: 'column' }}
+                            className="row">
+                        </Row>
+                    </Column>
+                    <Column>
+                        <span className='rowColor' >Shortcuts</span>
+                        <Row style={{ padding: '30px 10px 10px 10px' }} horizontal='left' vertical='center'
+                            breakpoints={{ 1024: 'column' }}
+                            className="row">
+                            <marquee><span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                                <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                                <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                                <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                                <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                                <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                                <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                                <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                                <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                                <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span></marquee>
+                        </Row>
+                    </Column>
+
+                </div>
+
                 <Row>
                     <Company />
                 </Row>
@@ -234,7 +290,7 @@ function DashboardComponent() {
                         <img style={{ marginTop: '12px' }} height='25px' width='27px' src={require('./../../assets/icons/iconstat.png')} />
                         <span style={{ marginTop: '12px' }}>Announcements</span>
                     </div>
-                    <table className={classes.table}>
+                    {/* <table className={classes.table}>
                         <thead>
                             <tr>
                                 <th className={classes.th}>*</th>
@@ -256,7 +312,17 @@ function DashboardComponent() {
                                 <td className={classes.td}>30/11/2022</td>
                             </tr>
                         </tfoot>
-                    </table>
+                    </table> */}
+
+                    {/* <Slide>
+         {slideImages.map((slideImage, index)=> (
+            <div className="each-slide" key={index}>
+              <div style={{'backgroundImage': `url(${slideImage.url})`}}>
+                <span>{slideImage.caption}</span>
+              </div>
+            </div>
+          ))} 
+        </Slide> */}
                 </div>
 
 
@@ -332,22 +398,22 @@ function DashboardComponent() {
                 <p>Birthay Details</p>
                 <div style={{ overflowX: 'scroll', height: '46px' }}>
                     <p>
-                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
-                        <span  onClick={() => setOpenSecond(true)}   className={classes.birthName}>james</span>
+                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
                     </p></div>
 
             </Modal>
