@@ -8,27 +8,26 @@ import TasksComponent from './TasksComponent';
 import Company from 'components/custom/Company';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import { Children } from 'react/cjs/react.production.min';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
-import { Slide } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css';
+import SlideShow from './SlideShow';
 
 
-const slideImages = [
-    {
-        url: require('./../../assets/icons/dashboardname.png'),
-        caption: 'Slide 1'
-    },
-    {
-        url: require('./../../assets/icons/dashboardname.png'),
-        caption: 'Slide 2'
-    },
-    {
-        url: require('./../../assets/icons/dashboardname.png'),
-        caption: 'Slide 3'
-    },
-];
+
+//const [openSecond, setOpenSecond] = useState({ flag: false, name: '', birthday: '' });
+
+const initialValues = {                   // type all the fields you need
+    flag: false,
+    name: '',
+    birthday: ''
+};
+
+// const [allValues, setAllValues] = useState({
+//     flag: '',
+//     name: '',
+//     birthday: ''
+//  });
+
 
 const useStyles = createUseStyles({
     cardsContainer: {
@@ -110,13 +109,24 @@ const useStyles = createUseStyles({
         background: '#def6ff',
         padding: '0 10px',
         border: '1px solid #DFE0EB',
-        marginTop: '33px',
+        marginTop: '23px',
         width: '100%',
-        height: '130px',
-        marginBottom: '32px'
+        height: '90px',
+        marginBottom: '12px'
     },
     addWidth: {
-        width: '90% !important',
+        width: '90%',
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr 1fr 1fr',
+        gridGap: '20px',
+        background: '#def6ff',
+        padding: '0 10px',
+        border: '1px solid #DFE0EB',
+        marginTop: '33px',
+        height: '56px'
+    },
+    annocementWidth: {
+        width: '100%',
         display: 'grid',
         gridTemplateColumns: '1fr 1fr 1fr 1fr',
         gridGap: '20px',
@@ -174,13 +184,25 @@ const useStyles = createUseStyles({
 
 
 function DashboardComponent() {
+
+    const [values, setValues] = useState(initialValues);
+
+    const setOpenSecond = (flag, name, bdate) => {
+        setValues({
+            ...values,                                // spreading the unchanged values
+            flag: flag,
+            name: name,
+            birthday: bdate        // changing the state of *changed value*
+        });
+    };
+
     const [value, onChange] = useState(new Date());
     // const [openFirst, setOpenFirst] = useState(false);
     //const [openSecond, setOpenSecond] = useState(false);
     const classes = useStyles();
 
     const [openFirst, setOpenFirst] = useState(false);
-    const [openSecond, setOpenSecond] = useState(false);
+
 
     return (
 
@@ -237,7 +259,7 @@ function DashboardComponent() {
 
                 <div className={classes.rowBox}>
                     <Column>
-                        <span className='rowColor'>Shortcuts</span>
+                        <span className='rowColor'>Announcements</span>
                         <Row horizontal='left' vertical='center'
                             breakpoints={{ 1024: 'column' }}
                             className="row">
@@ -245,27 +267,26 @@ function DashboardComponent() {
                         </Row>
                     </Column>
                     <Column>
-                        <span className='rowColor' >Shortcuts</span>
+                        <span className='rowColor' >Achievements</span>
                         <Row horizontal='left' vertical='center'
                             breakpoints={{ 1024: 'column' }}
                             className="row">
                         </Row>
                     </Column>
                     <Column>
-                        <span className='rowColor' >Shortcuts</span>
-                        <Row style={{ padding: '30px 10px 10px 10px' }} horizontal='left' vertical='center'
+                        <span className='rowColor' > Birthdays</span>
+                        <Row style={{ padding: '0px 10px 10px 10px' }} horizontal='left' vertical='center'
                             breakpoints={{ 1024: 'column' }}
                             className="row">
-                            <marquee><span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                                <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                                <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                                <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                                <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                                <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                                <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                                <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                                <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                                <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span></marquee>
+                            <marquee>
+                                <span onClick={() => setOpenSecond(true, 'suma', '11/05/2011')} className={classes.birthName}>suma</span>
+                                <span onClick={() => setOpenSecond(true, 'ankit', '05/01/1990')} className={classes.birthName}>ankit</span>
+                                <span onClick={() => setOpenSecond(true, 'james', '08/05/1995')} className={classes.birthName}>james</span>
+                                <span onClick={() => setOpenSecond(true, 'figo', '30/11/1985')} className={classes.birthName}>figo</span>
+                                <span onClick={() => setOpenSecond(true, 'arvind', '03/01/1967')} className={classes.birthName}>arvind</span>
+                                <span onClick={() => setOpenSecond(true, 'devi', '07/07/2007')} className={classes.birthName}>devi</span>
+
+                            </marquee>
                         </Row>
                     </Column>
 
@@ -286,7 +307,7 @@ function DashboardComponent() {
                     <Calendar onChange={onChange} value={value} className={classes.calnder} />
                 </div>
                 <div className={classes.column}>
-                    <div className={classes.addWidth}>
+                    <div style={{width: '100% !important'}} className={classes.annocementWidth}>
                         <img style={{ marginTop: '12px' }} height='25px' width='27px' src={require('./../../assets/icons/iconstat.png')} />
                         <span style={{ marginTop: '12px' }}>Announcements</span>
                     </div>
@@ -314,15 +335,19 @@ function DashboardComponent() {
                         </tfoot>
                     </table> */}
 
-                    {/* <Slide>
-         {slideImages.map((slideImage, index)=> (
-            <div className="each-slide" key={index}>
-              <div style={{'backgroundImage': `url(${slideImage.url})`}}>
-                <span>{slideImage.caption}</span>
-              </div>
-            </div>
-          ))} 
-        </Slide> */}
+                    {/* <div className="slide-container"> */}
+                    {/* <Fade>
+                        {slideImages.map((fadeImage, index) => (
+                            <div className="each-fade" key={index}>
+                                <div className="image-container">
+                                    <img src={fadeImage.url} alt={fadeImage.caption}/>
+                                </div>
+                                <h2>{fadeImage.caption}</h2>
+                            </div>
+                        ))}
+                    </Fade> */}
+                    {/* </div> */}
+                    <SlideShow />
                 </div>
 
 
@@ -398,28 +423,29 @@ function DashboardComponent() {
                 <p>Birthay Details</p>
                 <div style={{ overflowX: 'scroll', height: '46px' }}>
                     <p>
-                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
-                        <span onClick={() => setOpenSecond(true)} className={classes.birthName}>james</span>
+                        <span onClick={() => setOpenSecond(true, 'suma', '11/05/2011')} className={classes.birthName}>suma</span>
+                        <span onClick={() => setOpenSecond(true, 'ankit', '05/01/1990')} className={classes.birthName}>ankit</span>
+                        <span onClick={() => setOpenSecond(true, 'james', '08/05/1995')} className={classes.birthName}>james</span>
+                        <span onClick={() => setOpenSecond(true, 'figo', '30/11/1985')} className={classes.birthName}>figo</span>
+                        <span onClick={() => setOpenSecond(true, 'arvind', '03/01/1967')} className={classes.birthName}>arvind</span>
+                        <span onClick={() => setOpenSecond(true, 'devi', '07/07/2007')} className={classes.birthName}>devi</span>
                     </p></div>
 
             </Modal>
-            <Modal open={openSecond} onClose={() => setOpenSecond(false)} center>
+            <Modal open={values.flag} onClose={() => setOpenSecond(false, '', '')} center>
                 <p>Birthay Photo</p>
-                <img height='100%' width='100%' src={require('./../../assets/images/popup-birthday.png')} />
+                <img style={{ float: 'left', textAlign: 'left', width: '50%' }} src={require('./../../assets/images/popup-birthday.png')} />
+                <Column>
+                    <Row>
+                        <p>Birthday Information</p>
+                    </Row>
+                    <Row>
+                        Name : {values.name}
+                    </Row>
+                    <Row>
+                        Birth Date : {values.birthday}
+                    </Row>
+                </Column>
             </Modal>
         </Column>
 
