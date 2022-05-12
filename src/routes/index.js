@@ -15,7 +15,7 @@ function Routes() {
 
     
     //const isUserLoggedIn = false;
-    return pathname === '/dashboard' ? <PrivateSection /> : <PublicRoutes />;
+    return pathname === '/login' ? <PublicRoutes /> : <PrivateSection />;
     //return  <PublicRoutes />;
 }
 
