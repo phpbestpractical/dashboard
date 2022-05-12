@@ -8,7 +8,7 @@ const slides = [
     { title: 'Second item', description: 'Lorem ipsum',
     url: 'https://applitools.com/wp-content/uploads/2018/07/Jira-new-logo.png'},
     { title: 'Third item', description: 'Lorem ipsum',
-    url: 'https://www.bing.com/th?id=AMMS_6e4e8567f9a00325e103a60ca1b62ff9&w=156&h=112&c=7&o=6&dpr=1.5&pid=SANGAM'}
+    url: 'https://www.bing.com/th?id=AMMS_6e4e8567f9a00325e103a60ca1b62ff9&w=156&h=112&c=7&o=6&dpr=1.5&pid=SANGAMcd'}
   ];
 
 const SlideShow = () => {
