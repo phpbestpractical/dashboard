@@ -11,7 +11,7 @@ import 'react-calendar/dist/Calendar.css';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 import SlideShow from './SlideShow';
-
+import ChatWindow from './ChatWindow';
 
 
 //const [openSecond, setOpenSecond] = useState({ flag: false, name: '', birthday: '' });
@@ -69,7 +69,7 @@ const useStyles = createUseStyles({
         marginTop: 30
     },
     lastRow: {
-        marginTop: 30
+        marginTop: 102
     },
     unresolvedTickets: {
         marginRight: 30,
@@ -90,7 +90,8 @@ const useStyles = createUseStyles({
         lineHeight: '1.5em',
         marginLeft: '150px',
         whiteSpace: 'nowrap',
-        textOverflow: 'ellipsis'
+        textOverflow: 'ellipsis',
+        marginTop: 11
     },
     dashboardSecondType: {
         fontSize: '10px',
@@ -177,7 +178,8 @@ const useStyles = createUseStyles({
         borderRadius: '23px',
         background: '#51d8f7',
         padding: '20px',
-        marginRight: '20px'
+        marginRight: '20px',
+        cursor: 'pointer'
     }
 });
 
@@ -196,6 +198,24 @@ function DashboardComponent() {
         });
     };
 
+
+    const InitialIcon = ({ initials }) => {
+        return (
+          <span
+            style={{
+              backgroundColor: 'blue',
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRadius: 30,
+              width: 50,
+              height: 50,
+              marginLeft: '36px'
+            }}>
+            <span style={{ color: 'white', fontSize: 25 }}>{initials}</span>
+          </span>
+        );
+      };
+
     const [value, onChange] = useState(new Date());
     // const [openFirst, setOpenFirst] = useState(false);
     //const [openSecond, setOpenSecond] = useState(false);
@@ -210,37 +230,37 @@ function DashboardComponent() {
 
         <Column>
 
-
-            <Column>
-                <Row style={{ height: '5px' }}>
-                    <img height='30px' src={require('./../../assets/icons/dashboardname.png')} />
-                    {/* <span className={classes.title}>Ariel Air Collins </span>  */}
+            <Row style={{ height: '5px' }}>
+                <img height='100px'
+                    src={require('./../../assets/icons/icons8-circled-user-female-skin-type-1-and-2-16.png')} />
+                {/* <span className={classes.title}>Ariel Air Collins </span>  */}
+            </Row>
+            <Row horizontal='left' vertical='center'
+                className={classes.lastRow}
+                breakpoints={{ 1024: 'column' }}>
+                {/* <IconLogo /> */}
+                {/* <img height='20px'
+                    style={{ marginLeft: '36px' }} src={require('./../../assets/icons/dashboardname.png')} /> */}
+                     <InitialIcon initials="SP" />
+                {/* <div className={classes.dashboardPicDiv1}>Gracie Collins </div>  */}
+                {/* <div className={classes.dashbardPicdiv2}>Senior</div> */}
+                <Row>
+                    <div className={classes.dashboardFirstType}>Code <b>TL</b></div>
+                    {/* <div className={classes.dashboardSecondType}>Birthday <b>8 June</b> </div>
+            <div className={classes.dashbardThirdType}>Gender <b>Female</b></div> */}
                 </Row>
-                <Row horizontal='left' vertical='center'
-                    className={classes.lastRow}
-                    breakpoints={{ 1024: 'column' }}>
-                    {/* <IconLogo /> */}
-                    <img height='50px' src={require('./../../assets/icons/icons8-circled-user-female-skin-type-1-and-2-16.png')} />
-                    {/* <div className={classes.dashboardPicDiv1}>Gracie Collins </div>  */}
-                    <div className={classes.dashbardPicdiv2}>Senior</div>
-                    <Row>
-                        <div className={classes.dashboardFirstType}>Code <b>TL</b></div>
-                        {/* <div className={classes.dashboardSecondType}>Birthday <b>8 June</b> </div>
+                <Row>
+                    <div className={classes.dashboardFirstType}>Designation <b>Tech Lead</b></div>
+                    {/* <div className={classes.dashboardSecondType}>Born <b>16 Aug 1982</b> </div>
             <div className={classes.dashbardThirdType}>Gender <b>Female</b></div> */}
-                    </Row>
-                    <Row>
-                        <div className={classes.dashboardFirstType}>Designation <b>Tech Lead</b></div>
-                        {/* <div className={classes.dashboardSecondType}>Born <b>16 Aug 1982</b> </div>
-            <div className={classes.dashbardThirdType}>Gender <b>Female</b></div> */}
-                    </Row>
-                    <Row>
-                        <div className={classes.dashboardFirstType}>Practise <b>Development</b></div>
-                        {/* <div className={classes.dashboardSecondType}>Born <b>16 Aug 1982</b> </div>
-            <div className={classes.dashbardThirdType}>Gender <b>Female</b></div> */}
-                    </Row>
                 </Row>
+                <Row>
+                    <div className={classes.dashboardFirstType}>Practise <b>Development</b></div>
+                    {/* <div className={classes.dashboardSecondType}>Born <b>16 Aug 1982</b> </div>
+            <div className={classes.dashbardThirdType}>Gender <b>Female</b></div> */}
+                </Row>
+            </Row>
 
-            </Column>
             <Column>
                 {/* <Row className={classes.rowBox}>
                     <div className={classes.link}>
@@ -278,7 +298,7 @@ function DashboardComponent() {
                         <Row style={{ padding: '0px 10px 10px 10px' }} horizontal='left' vertical='center'
                             breakpoints={{ 1024: 'column' }}
                             className="row">
-                            <marquee>
+                            <marquee behavior="scroll" direction="left" scrollamount="5">
                                 <span onClick={() => setOpenSecond(true, 'suma', '11/05/2011')} className={classes.birthName}>suma</span>
                                 <span onClick={() => setOpenSecond(true, 'ankit', '05/01/1990')} className={classes.birthName}>ankit</span>
                                 <span onClick={() => setOpenSecond(true, 'james', '08/05/1995')} className={classes.birthName}>james</span>
@@ -307,7 +327,7 @@ function DashboardComponent() {
                     <Calendar onChange={onChange} value={value} className={classes.calnder} />
                 </div>
                 <div className={classes.column}>
-                    <div style={{width: '100% !important'}} className={classes.annocementWidth}>
+                    <div style={{ width: '100% !important' }} className={classes.annocementWidth}>
                         <img style={{ marginTop: '12px' }} height='25px' width='27px' src={require('./../../assets/icons/iconstat.png')} />
                         <span style={{ marginTop: '12px' }}>Announcements</span>
                     </div>
@@ -419,7 +439,7 @@ function DashboardComponent() {
 
             </Row>
 
-            <Modal open={openFirst} onClose={() => setOpenFirst(false)} center>
+            {/* <Modal open={openFirst} onClose={() => setOpenFirst(false)} center>
                 <p>Birthay Details</p>
                 <div style={{ overflowX: 'scroll', height: '46px' }}>
                     <p>
@@ -431,21 +451,33 @@ function DashboardComponent() {
                         <span onClick={() => setOpenSecond(true, 'devi', '07/07/2007')} className={classes.birthName}>devi</span>
                     </p></div>
 
-            </Modal>
+            </Modal> */}
             <Modal open={values.flag} onClose={() => setOpenSecond(false, '', '')} center>
                 <p>Birthay Photo</p>
-                <img style={{ float: 'left', textAlign: 'left', width: '50%' }} src={require('./../../assets/images/popup-birthday.png')} />
-                <Column>
-                    <Row>
-                        <p>Birthday Information</p>
-                    </Row>
-                    <Row>
-                        Name : {values.name}
-                    </Row>
-                    <Row>
-                        Birth Date : {values.birthday}
-                    </Row>
-                </Column>
+
+
+
+
+
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gridGap: 20 }}>
+                    <div><img style={{ float: 'left', textAlign: 'left', width: '50%' }} src={require('./../../assets/images/popup-birthday.png')} /></div>
+                    <div><Column>
+                        <Row>
+                            <h2>Birthday Information</h2>
+                        </Row>
+                        <Row>
+                            Name : {values.name}
+                        </Row>
+                        <Row>
+                            Birth Date : {values.birthday}
+                        </Row>
+                    </Column></div>
+                    <div style={{  width: '175%' }}>  <Column>
+                        <Row>
+                            <ChatWindow />
+                        </Row>
+                    </Column></div>
+                </div>
             </Modal>
         </Column>
 

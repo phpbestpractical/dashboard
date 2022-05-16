@@ -3,6 +3,7 @@ import { history } from '../../_helpers/history';
 import PrivateSection from './../../routes/PrivateSection';
 import DashBoard from "./../../routes/dashboard";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import GoogleLogin from 'react-google-login';
 //import { connect } from 'react-redux';
 
 //import { userActions } from '../_actions';
@@ -22,12 +23,17 @@ class LoginPage extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.responseGoogle = this.responseGoogle.bind(this);
     }
 
     handleChange(e) {
         const { name, value } = e.target;
         this.setState({ [name]: value });
     }
+
+    responseGoogle(response)  {
+        console.log(response);
+      }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -71,6 +77,13 @@ class LoginPage extends React.Component {
                         } */}
                         {/* <Link to="/register" className="btn btn-link">Register</Link> */}
                         <Link className="btn btn-primary" to="/dashboard">Login</Link>
+                        <GoogleLogin
+    clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+    buttonText="Login"
+    onSuccess={this.responseGoogle}
+    onFailure={this.responseGoogle}
+    cookiePolicy={'single_host_origin'}
+  />,
                     </div>
                 </form>
             </div>
